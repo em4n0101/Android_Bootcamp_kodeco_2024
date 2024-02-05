@@ -16,12 +16,14 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.alexbar.androidbootcampkodeco2024.components.Map
 import com.alexbar.androidbootcampkodeco2024.components.MapSlider
 import com.alexbar.androidbootcampkodeco2024.ui.theme.AndroidBootcampKodeco2024Theme
 import com.alexbar.androidbootcampkodeco2024.ui.theme.Dimens.dimen_16_dp
 import com.alexbar.androidbootcampkodeco2024.ui.theme.Dimens.percent_default_value
+import kotlin.math.roundToInt
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,12 +59,14 @@ fun PlotSurface() {
             )
             MapSlider(
                 value = xPercent,
+                title = stringResource(R.string.x_axis_title, (xPercent * 100).roundToInt()),
                 valueChanged = { value ->
                     xPercent = value
                 }
             )
             MapSlider(
                 value = yPercent,
+                title = stringResource(R.string.y_axis_title, (yPercent * 100).roundToInt()),
                 valueChanged = { value ->
                     yPercent = value
                 }
