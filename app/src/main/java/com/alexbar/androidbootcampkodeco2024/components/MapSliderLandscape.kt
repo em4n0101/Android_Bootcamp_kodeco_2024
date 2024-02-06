@@ -1,6 +1,6 @@
 package com.alexbar.androidbootcampkodeco2024.components
 
-import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
@@ -11,39 +11,35 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.alexbar.androidbootcampkodeco2024.ui.theme.Dimens.dimen_4_dp
-import com.alexbar.androidbootcampkodeco2024.ui.theme.Dimens.dimen_8_dp
-import com.alexbar.androidbootcampkodeco2024.ui.theme.Dimens.percent_default_value
-import com.alexbar.androidbootcampkodeco2024.ui.theme.Dimens.value_range_end
-import com.alexbar.androidbootcampkodeco2024.ui.theme.Dimens.value_range_start
+import com.alexbar.androidbootcampkodeco2024.ui.theme.Dimens
 
 @Composable
-fun MapSlider(
+fun MapSliderLandscape(
     modifier: Modifier = Modifier,
-    value: Float = percent_default_value,
+    value: Float = Dimens.percent_default_value,
     title: String,
     valueChanged: (Float) -> Unit
 ) {
-    Row(modifier = Modifier
+    Column(modifier = Modifier
         .fillMaxWidth()
-        .padding(horizontal = 16.dp)
+        .padding(horizontal = Dimens.dimen_16_dp)
     ) {
         Text(
             text = title,
             modifier = Modifier
-                .padding(start = 8.dp)
+                .padding(start = Dimens.dimen_8_dp)
                 .width(120.dp)
-                .align(Alignment.CenterVertically),
+                .align(Alignment.CenterHorizontally),
         )
         Slider(
             modifier = modifier
                 .fillMaxWidth()
                 .padding(
-                    horizontal = dimen_8_dp,
-                    vertical = dimen_4_dp
+                    horizontal = Dimens.dimen_8_dp,
+                    vertical = Dimens.dimen_4_dp
                 ),
             value = value,
-            valueRange = value_range_start..value_range_end,
+            valueRange = Dimens.value_range_start..Dimens.value_range_end,
             onValueChange = valueChanged
         )
     }
@@ -51,9 +47,9 @@ fun MapSlider(
 
 @Preview
 @Composable
-fun MapSliderPreview() {
-    MapSlider(
-        value = percent_default_value,
+fun MapSliderLandscapePreview() {
+    MapSliderLandscape(
+        value = Dimens.percent_default_value,
         title = "X value: 30%",
         valueChanged = {}
     )
