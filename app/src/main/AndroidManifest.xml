@@ -17,7 +17,7 @@
             android:exported="true"
             android:label="@string/app_name"
             android:screenOrientation="sensor"
-            android:theme="@style/Theme.AndroidBootcampKodeco2024">
+            android:theme="@style/Theme.CustomSplashScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
